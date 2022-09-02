@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+:root {
+  --nav-height: 100px;
+}
+.title {
+  font-size: 50px;
+  text-align: center;
+}
+.navbar {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background-color: white;
+  color: #333;
+  position: fixed;
+  z-index: 999;
+}
+.navbar li {
+  display: inline-block;
+  margin: 0px 10px;
+}
+.navbar li a {
+  color: rgb(34, 14, 75);
+  font-weight: 600;
+}
+.navbar button {
+  border: none;
+  background-color: rgb(26, 68, 151);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 14px;
+  border: 1px solid rgb(26, 68, 151);
+}
+.navbar button:hover {
+  background-color: transparent;
+  cursor: pointer;
+  color: rgb(26, 68, 151);
+}
+.nav-hidden {
+  transform: translateY(calc(-1 * var(--nav-height)));
+}
+.main {
+  background-image: linear-gradient(rgba(5, 0, 136, 0.5), rgba(5, 0, 136, 0.5)),
+    url(images/background.jpg);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+.content {
+  margin-top: 13%;
+  margin-left: 9%;
+}
+
+.content h1 {
+  font-size: 120px;
+  color: white;
+  font-weight: bold;
+  opacity: 0;
+}
+.content p {
+  max-width: 500px;
+  line-height: 1.7;
+  color: white;
+  opacity: 0;
+}
+.content button {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-weight: bold;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: ease 1s;
+  font-size: 24px;
+  opacity: 0;
+}
+.content button:hover {
+  color: rgb(36, 90, 155);
+  background-color: white;
+}
+.slide-left {
+  animation: slide-left 1s linear forwards;
+}
+.content h1 {
+  animation-delay: 1s;
+}
+.content p {
+  animation-delay: 2s;
+}
+.content button {
+  animation-delay: 3s;
+}
+@keyframes slide-left {
+  0% {
+    transform: translate(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px);
+    opacity: 1;
+  }
+}
+
+.services {
+  height: 100vh;
+  margin: 0 9%;
+}
+.services .title {
+  margin: 9% 0;
+}
+.services .container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 2rem;
+  align-items: center;
+  text-align: center;
+  margin-top: 5rem;
+}
+.services .container .box {
+  padding: 50px;
+  background-color: rgb(249, 249, 249);
+  transition: ease 1s;
+  border: 1px solid transparent;
+}
+.services .container .box:hover {
+  box-shadow: 5px 30px 56.1276px rgb(55 55 55 / 12%);
+  border: 1px solid transparent;
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+.packages {
+  margin: 0 9%;
+}
+.package-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  grid-gap: 2rem;
+  align-items: center;
+  margin-top: 5rem;
+}
+.thumbnail {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  will-change: filter;
+  cursor: pointer;
+}
+.thumbnail img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: ease-in-out 0.5s;
+}
+.thumbnail img:hover {
+  opacity: 0.5;
+}
+.thumbnail h3 {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: right;
+  color: gray;
+  top: 36px;
+  right: 40px;
+}
+.dest-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+.stars i {
+  color: rgb(40, 37, 122);
+  font-size: 20px;
+}
+.location h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.location p {
+  font-size: 15px;
+  color: var(--second-color);
+}
+.thumbnail:hover {
+  transform: scale(1.04);
+}
+.thumbnail:hover .stars i {
+  color: rgb(117, 1, 251);
+}
+.destinations {
+  height: 100vh;
+  margin: 0 9%;
+}
+.destinations .row-items {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 2rem;
+  margin-top: 5rem;
+}
+.destinations .box img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: brightness(80%);
+  transition: all 0.3s cubic-bezier(0.495, 0.05, 0.55, 0.95);
+  will-change: filter;
+}
+.destinations .box {
+  position: relative;
+}
+.destinations .box:hover img {
+  transform: scale(1.04);
+  cursor: pointer;
+}
+.box h4 {
+  position: absolute;
+  font-size: 22px;
+  font-weight: 500;
+  color: white;
+  left: 15px;
+  bottom: 60px;
+}
+.box h6 {
+  position: absolute;
+  font-size: 15px;
+  color: white;
+  left: 15px;
+  bottom: 30px;
+  letter-spacing: 2px;
+}
